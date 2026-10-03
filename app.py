@@ -172,7 +172,6 @@ pacote_real = carregar_modelo()
 if pacote_real is not None:
     pacote = pacote_real
     pacote["modo"] = "real"
-    st.markdown('<div class="real-model-ok">✅ MODELO REAL CARREGADO — Logistic Regression treinado com dados do HEMOPA.</div>', unsafe_allow_html=True)
 else:
     pacote = treinar_modelo_demo()
     st.markdown(
@@ -314,6 +313,7 @@ with tab3:
 
 st.markdown("---")
 st.caption(
-    "Ferramenta de apoio à decisão desenvolvida em TCC — HEMOPA. Não substitui o exame confirmatório laboratorial (NAT). "
-    + ("Modo demonstrativo ativo." if pacote.get("modo") == "demo" else "Modelo em produção carregado a partir de modelo_hcv.pkl.")
+    "Ferramenta de apoio à decisão desenvolvida como parte do Trabalho de Conclusão de Curso (TCC). "
+    "Não substitui o exame confirmatório laboratorial (NAT). "
+    + ("Modo demonstrativo ativo." if pacote.get("modo") == "demo" else "")
 )
